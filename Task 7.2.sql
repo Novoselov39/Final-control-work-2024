@@ -1,5 +1,5 @@
-CREATE database IF NOT EXISTS Human_friends1;
-USE Human_friends1;
+CREATE database IF NOT EXISTS Human_friends;
+USE Human_friends;
 CREATE table IF NOT EXISTS animal_classes
 (
 	Id INT AUTO_INCREMENT PRIMARY KEY, 
@@ -143,7 +143,7 @@ CREATE table IF NOT EXISTS yang_animal AS
 SELECT Name, Birthday, Commands, genus, TIMESTAMPDIFF(MONTH, Birthday, CURDATE()) AS Age_in_month
 FROM animals WHERE Birthday BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADDDATE(CURDATE(), INTERVAL -1 YEAR);
 
-USE Human_friends1;
+USE Human_friends;
 
 SELECT * FROM yang_animal;
 SELECT h.Name, h.Birthday, h.Commands, pa.Genus_name, ya.Age_in_month 
